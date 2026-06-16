@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BQ Islamic Boarding School</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  background:#3c5f42;
+  color: #333;
+}
+
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #3c5f42; 
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color: white;
+  line-height: 22px;
+}
+
+.logo span{
+  font-size:12px;
+  letter-spacing:3px;
+  display: block;
+  margin-top: 5px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight: 500;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#00ff99;
+}
+
+
+.btn-nav{
+  padding:12px 25px;
+  background:linear-gradient(to right,#00bfff,#00ff99);
+  color:white;
+  text-decoration:none;
+  border-radius:15px;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.btn-nav:hover{
+  transform:scale(1.05);
+  border-radius:25px;
+}
+
+.hero{
+  width:100%;
+  height:100vh;
+  
+  
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bq.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  display: flex;
+  align-items: center; 
+  padding-left: 70px;
+  padding-top: 80px; 
+}
+
+.content{
+  max-width:700px;
+  color: white;
+}
+
+.content h1{
+  font-size:70px;
+  line-height:80px;
+  margin-bottom:25px;
+  background: linear-gradient(to right, #00bfff, #00ff99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content p{
+  font-size:22px;
+  line-height:36px;
+  margin-bottom:40px;
+}
+
+.buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 35px;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.blue{
+  background:linear-gradient(to right,#00bfff,#00ff99);
+  color:white;
+}
+
+.white{
+  background:white;
+  color:black;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  border-radius:30px;
+}
+
+.main-section {
+  background: white;
+  border-radius: 40px 40px 0 0;
+  padding: 40px 70px 70px 70px;
+  position: relative;
+  z-index: 10;
+  margin-top: -40px; 
+}
+
+.about, .projects, .gallery {
+  padding: 80px 0 40px 0;
+  scroll-margin-top: 100px;
+}
+
+h2.section-title {
+  font-size:45px;
+  background: linear-gradient(to right, #00bfff, #00ff99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom:20px;
+  font-weight: bold;
+}
+
+.about p {
+  font-size:20px;
+  line-height:36px;
+  max-width:900px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stars {
+  color: #ffcc00;
+  font-size: 26px;
+}
+
+.rating-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.card {
+  background: #f9fbf9;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e1e8e3;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 25px;
+}
+
+.card-info h3 {
+  font-size: 22px;
+  color: #3c5f42;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  font-size: 15px;
+  color: #666;
+  line-height: 24px;
+}
+
+hr {
+  border: 0; 
+  height: 1px; 
+  background: #e6eee8; 
+  margin: 40px 0;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    BQ<br>
+    <span>ISLAMIC BOARDING SCHOOL</span>
+  </div>
+
+  <ul>
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#projects">Project Siswa</a></li>
+    <li><a href="#gallery">Galeri</a></li>
+    <li><a href="https://wa.me/6285882944178" target="_blank">Kontak</a></li>
+  </ul>
+
+  <a href="https://wa.me/6285882944178" class="btn-nav" target="_blank">
+    085882944178
+  </a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="content">
+    <h1>
+      BQ Islamic<br>
+      Boarding School
+    </h1>
+    <p>
+      Membentuk generasi Qur'ani, berakhlak mulia,
+      berilmu, dan siap menghadapi masa depan.
+    </p>
+    <div class="buttons">
+      <a href="#about" class="btn blue">Pelajari Lebih Lengkap</a>
+      <a href="#" class="btn white">Tonton Video</a>
+    </div>
+  </div>
+</section>
+
+<div class="main-section">
+
+  <section class="about" id="about">
+    <h2 class="section-title">Tentang Sekolah</h2>
+    <p>
+      BQ Islamic Boarding School adalah lembaga pendidikan Islam modern
+      yang memadukan ilmu agama, akademik, pembentukan karakter santri serta mengajarkan betapa
+      mulianya adab jika dijaga dan sopan santun.
+    </p>
+    
+    <div class="rating-container">
+      <div class="stars">★★★★★</div>
+      <div class="rating-text">4.9 / 5.0 (Dari 500+ Wali Santri)</div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="projects" id="projects">
+    <h2 class="section-title">Project Siswa</h2>
+    <p style="font-size: 18px; color: #666; margin-bottom: 10px;">Karya nyata dan kreativitas inovatif para santri BQ Islamic Boarding School.</p>
+    
+    <div class="grid-container">
+      
+      <div class="card">
+        <img src="projectbq.png" alt="Project Website">
+        <div class="card-info">
+          <h3>Al-quran digital</h3>
+          <p>Project pembuatan al-quran digital untuk masyarakat.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="project2bq.png" alt="Project Aplikasi">
+        <div class="card-info">
+          <h3>jam digital islami dan jadwal sholat bina qurani mosque</h3>
+          <p>UI/UX Aplikasi Jam Digital Islami Dan Jadwal Sholat Bina Qurani Mosque</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="project3bq.png" alt="Project Robotik">
+        <div class="card-info">
+        <h3>Website Furniture</h3>
+          <p>untuk berbelanja kebutuhan barang rumahan untuk masyarakat</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="gallery" id="gallery">
+    <h2 class="section-title">Galeri & Fasilitas</h2>
+    <p style="font-size: 18px; color: #666; margin-bottom: 10px;">Intip lingkungan belajar serta kenyamanan sarana pendukung penunjang santri.</p>
+    
+    <div class="grid-container">
+      
+      <div class="card">
+        <img src="masjidbq.png" alt="Masjid">
+        <div class="card-info">
+          <h3>Masjid Utama al-qalam</h3>
+          <p>masjid bq al-qalam Pusat ibadah, kajian keislaman, dan tempat setoran hafalan harian yang nyaman dan luas.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="asramabq.png" alt="Asrama">
+        <div class="card-info">
+          <h3>Asrama Santri</h3>
+          <p>Kamar tidur bersih, rapi, dan dilengkapi dengan kasur serta lemari pribadi yang memadai.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="kelasbq.png" alt="Kelas">
+        <div class="card-info">
+          <h3>Ruang Kelas Modern</h3>
+          <p>Ruang kelas ber-AC dengan alat bantu televisi LG untuk mendukung suasana belajar interaktif.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
